@@ -54,18 +54,35 @@ body {
   right: 10px;
 }
 
-.table {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-actions button {
+  margin-left: 10px;
 }
 
 .modal-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-}
-
-.table img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
 }
