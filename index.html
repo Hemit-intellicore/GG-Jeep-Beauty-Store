@@ -52,27 +52,11 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="cart">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="cart-items">
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="4" class="text-right">Total Amount:</td>
-                  <td colspan="2" id="total-amount">₦0.00</td>
-                </tr>
-              </tfoot>
-            </table>
+          <div id="cart-items" class="d-flex flex-column">
+            <!-- Cart Items -->
+          </div>
+          <div class="text-right font-weight-bold mt-3">
+            Total Amount: <span id="total-amount">₦0.00</span>
           </div>
         </div>
         <div class="modal-footer">
@@ -89,4 +73,4 @@
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <script src="script.js"></script>
 </body>
-</html>
+</html>p
