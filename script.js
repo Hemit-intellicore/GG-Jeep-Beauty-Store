@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-body">
             <h5 class="card-title">${product.name}</h5>
             <p class="card-text">₦${product.price.toFixed(2)}</p>
-            <button class="btn btn-primary" onclick="addToCart(${product.id})">View/Add to Cart</button>
+            <button class="btn btn-outline-dark" onclick="viewProduct(${product.id})">View Product</button>
+            <button class="btn btn-primary" onclick="addToCart(${product.id})">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -29,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCart();
 });
 
+function viewProduct(productId) {
+  const product = products.find(p => p.id === productId);
+  alert(`Product: ${product.name}\nPrice: ₦${product.price.toFixed(2)}\nDescription: This is a great product.`);
+}
+
 function addToCart(productId) {
   const product = products.find(p => p.id === productId);
   const cartItem = cart.find(item => item.id === productId);
@@ -38,7 +44,6 @@ function addToCart(productId) {
     cart.push({ ...product, quantity: 1 });
   }
   updateCart();
-  $('#cartModal').modal('show'); // Show cart modal when item is added
 }
 
 function updateCart() {
@@ -50,26 +55,52 @@ function updateCart() {
     totalAmount += itemTotal;
     const cartItem = `
       <tr>
+        <td><img src="${item.image}" alt="${item.name}"></td>
         <td>${item.name}</td>
         <td>₦${item.price.toFixed(2)}</td>
-        <td>${item.quantity}</td>
-        <td>₦${itemTotal.toFixed(2)}</td>
-      </tr>
-    `;
-    cartItemsContainer.innerHTML += cartItem;
-  });
-  document.getElementById('total-amount').innerText = `₦${totalAmount.toFixed(2)}`;
-  document.getElementById('cart-count').innerText = cart.length;
+
+            <td>${item.quantity}</td>
+    <td>₦${itemTotal.toFixed(2)}</td>
+    <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button></td>
+  </tr>
+`;
+cartItemsContainer.innerHTML += cartItem;
+});
+document.getElementById(‘total-amount’).innerText = ₦${totalAmount.toFixed(2)};
+document.getElementById(‘cart-count’).innerText = cart.length;
+}
+
+function removeFromCart(productId) {
+cart = cart.filter(item => item.id !== productId);
+updateCart();
 }
 
 function checkout() {
-  if (cart.length === 0) {
-    alert('Your cart is empty.');
-  } else {
-    alert('Proceeding to payment...');
-    // Implement payment logic here
-    cart = [];
-    updateCart();
-    $('#cartModal').modal('hide'); // Hide cart modal after checkout
-  }
+if (cart.length === 0) {
+alert(‘Your cart is empty.’);
+} else {
+let totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+payWithPaystack(totalAmount);
 }
+}
+
+function payWithPaystack(amount) {
+var handler = PaystackPop.setup({
+key: ‘your_public_key_here’, // Replace with your public key
+email: ‘customer@example.com’,
+amount: amount * 100, // Amount in kobo
+currency: ‘NGN’,
+ref: ‘’ + Math.floor((Math.random() * 1000000000) + 1), // Generate a random reference number
+callback: function(response) {
+alert(‘Payment successful. Transaction ref is ’ + response.reference);
+cart = [];
+updateCart();
+$(’#cartModal’).modal(‘hide’); // Hide cart modal after checkout
+},
+onClose: function() {
+alert(‘Payment cancelled.’);
+}
+});
+handler.openIframe();
+}
+              
