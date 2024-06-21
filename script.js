@@ -54,22 +54,22 @@ function updateCart() {
     const itemTotal = item.price * item.quantity;
     totalAmount += itemTotal;
     const cartItem = `
-      <tr>
-        <td><img src="${item.image}" alt="${item.name}"></td>
-        <td>${item.name}</td>
-        <td>₦${item.price.toFixed(2)}</td>
-
-            <td>${item.quantity}</td>
-    <td>₦${itemTotal.toFixed(2)}</td>
-    <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button></td>
-  </tr>
-`;
-cartItemsContainer.innerHTML += cartItem;
-});
-document.getElementById(‘total-amount’).innerText = ₦${totalAmount.toFixed(2)};
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-details">
+          <h5>${item.name}</h5>
+          <p>₦${item.price.toFixed(2)} x ${item.quantity} = ₦${itemTotal.toFixed(2)}</p>
+        </div>
+        <div class="cart-item-actions">
+          <button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.id})">Remove</button>
+        </div>
+      </div>
+    `;
+    cartItemsContainer.innerHTML += cartItem;
+  });
+  document.getElementById('total-amount').innerText = `₦${totalAmount.toFixed(2)}`;
 document.getElementById(‘cart-count’).innerText = cart.length;
 }
-
 function removeFromCart(productId) {
 cart = cart.filter(item => item.id !== productId);
 updateCart();
@@ -103,4 +103,4 @@ alert(‘Payment cancelled.’);
 });
 handler.openIframe();
 }
-              
+                                                          
