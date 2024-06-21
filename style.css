@@ -1,0 +1,65 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.jumbotron {
+  background-color: black;
+}
+
+.jumbotron .display-4 {
+  color: pink;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.jumbotron .lead {
+  color: pink;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.card-title {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: pink;
+  border-color: pink;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.card img {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+#cart-count {
+  position: relative;
+  top: -10px;
+  right: 10px;
+}
+
+.table {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
