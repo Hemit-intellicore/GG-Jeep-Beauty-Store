@@ -1,0 +1,44 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+h2 {
+  color: pink;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: pink;
+  border-color: pink;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.list-group-item {
+  border: none;
+  padding-left: 0;
+}
