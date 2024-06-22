@@ -1,5 +1,5 @@
 // Assuming cart data is stored in localStorage
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
   updateOrderSummary();
@@ -26,6 +26,26 @@ function updateOrderSummary() {
   });
 
   document.getElementById('total-amount').innerText = `₦${totalAmount.toFixed(2)}`;
+}
+
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  const cartItem = cart.find(item => item.id === productId);
+  if (cartItem) {
+    cartItem.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  updateCart();
+  updateOrderSummary(); // Update order summary when adding to cart
+  localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
+  updateCart();
+  updateOrderSummary(); // Update order summary when removing from cart
+  localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
 }
 
 function payWithPaystack() {
