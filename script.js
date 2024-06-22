@@ -7,8 +7,8 @@ const products = [
   { id: 5, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
 ];
 
-// Initialize an empty cart array to store items added to the cart
-let cart = [];
+// Initialize cart from localStorage or empty array if no data is present
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Wait for the DOM content to load before executing JavaScript
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,6 +60,8 @@ function addToCart(productId) {
   }
   // Update the cart display
   updateCart();
+  // Save cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Function to update the cart display
@@ -100,6 +102,8 @@ function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
   // Update the cart display
   updateCart();
+  // Save updated cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Function to initiate checkout process
