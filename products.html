@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG JEEP Beauty Store</title>
+    <meta name="description" content="Your one-stop shop for the best beauty products">
+    <meta name="keywords" content="beauty, skincare, makeup, cosmetics">
+    <meta name="author" content="GG JEEP Beauty Store">
+    <meta property="og:title" content="GG JEEP Beauty Store">
+    <meta property="og:description" content="Your one-stop shop for the best beauty products">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <meta property="og:url" content="https://www.yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-pink shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="GG JEEP Beauty Store Logo" width="200" height="auto">
+            </a>
+            <!-- Toggler/collapsing button for mobile view -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a class="btn btn-outline-light ml-auto" href="#" data-toggle="modal" data-target="#cartModal">
+                    <span class="badge badge-light" id="cart-count">0</span>
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart.png" alt="Cart">
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+
+    <main class="container mt-5">
+        <section class="hero bg-light text-center p-5 mb-5">
+          <h2>Our Products</h2>
+          <p>Your one-stop shop for the best beauty products</p>
+          </section>
+          </main>
+
+  <div class="container mt-5">
+    <div id="products" class="row">
+      <!-- Product Cards will be inserted here -->
+    </div>
+  </div>
+
+
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-items"></div>
+          <div class="text-right font-weight-bold mt-3">
+            Total Amount: <span id="total-amount">₦0.00</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='checkout.html'">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white p-4">
+    <div class="container">
+        <div class="row">
+
+            <!-- Footer About Us Section -->
+            <div class="col-md-3 mb-3">
+                <h5>About Us</h5>
+                <p>
+                    GG JEEP Beauty Store offers a wide variety of beauty products to help you look and feel your best. We are dedicated to providing top-quality products and excellent customer service.
+                </p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="col-md-3 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="shop.html" class="text-white">Shop</a></li>
+                    <li><a href="#" class="text-white">About</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us Section -->
+            <div class="col-md-3 mb-3">
+                <h5>Contact Us</h5>
+                <p>
+                    Email: info@ggjeepbeautystore.com<br>
+                    Phone: +123 456 7890<br>
+                    Address: 123 Beauty Ave, Glamour City, CA 90001
+                </p>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="col-md-3 mb-3">
+                <h5>Opening Hours</h5>
+                <div class="opening-hours">
+                    <table class="table text-white">
+                        <tbody>
+                            <tr>
+                                <td>Mon - Fri:</td>
+                                <td>9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday:</td>
+                                <td>10:00 AM - 4:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday:</td>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <h5>Follow Us</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Acknowledgment Section -->
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <small>&copy; 2024 GG JEEP Beauty Store. All Rights Reserved | Designed and developed by <a href="http://www.hemitintellicore.com" class="text-white">Hemit Intellicore Ltd</a></small>
+            </div>
+        </div>
+
+        <!-- Privacy Policy and Disclaimer -->
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <small><a href="/privacy-policy" class="text-white">Privacy Policy</a></small> |
+                <small><a href="#" class="text-white">Disclaimer</a></small>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
