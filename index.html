@@ -126,6 +126,70 @@
         </div>
     </section>
 
+
+     <!-- Beauty Salon Section -->
+     <section class="beauty-salon mb-5">
+        <h2 class="text-center mb-4">GG JEEP Beauty Salon</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="images/salon.jpg" class="img-fluid rounded shadow" alt="Beauty Salon">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h3>Our Services</h3>
+                    <p>GG JEEP Beauty Store also specializes in making different African hairstyles, sales of various wigs, treatment of wigs, fixing of nails, and all other beauty salon services.</p>
+                    <h4>Book an Appointment</h4>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="service">Choose a Service</label>
+                            <select class="form-control" id="service" required>
+                                <option value="">Select a service</option>
+                                <option>Hair Washing and setting</option>
+                                <option>Hair Braiding</option>
+                                <option>Wig Treatment</option>
+                                <option>Nail Fixing</option>
+                                <option>Other Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select class="form-control" id="serviceType" required>
+                                <option value="">Select a service type</option>
+                                <option>Home Service</option>
+                                <option>Onsite Service</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Appointment Date</label>
+                            <input type="date" class="form-control" id="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Appointment Time</label>
+                            <input type="time" class="form-control" id="appointmentTime" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="bookAppointmentBtn">Book Appointment</button>
+                    </form>
+                    <form id="customerForm" style="display:none; margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <div id="fh5co-services" class="fh5co-bg-section">
         <div class="container">
             <div class="row">
@@ -321,7 +385,7 @@
         <!-- Privacy Policy and Disclaimer -->
         <div class="row mt-3">
             <div class="col-md-12 text-center">
-                <small><a href="/privacy-policy" class="text-white">Privacy Policy</a></small> |
+                <small><a href="page.html" class="text-white">Privacy Policy</a></small> |
                 <small><a href="#" class="text-white">Disclaimer</a></small>
             </div>
         </div>
@@ -332,6 +396,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/appointment.js"></script>
 <script>
     // Activate carousel
     $('.carousel').carousel({
@@ -339,5 +404,28 @@
     });
 </script>
 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjOSMsmMTJCF9IRj3mzEd-OwIoq7apt_M",
+      authDomain: "gg-jeep-stores-e931e.firebaseapp.com",
+      projectId: "gg-jeep-stores-e931e",
+      storageBucket: "gg-jeep-stores-e931e.appspot.com",
+      messagingSenderId: "280405056247",
+      appId: "1:280405056247:web:191777d975aa7a7f79d1f2",
+      measurementId: "G-BHF7G52QRL"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
