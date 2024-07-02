@@ -1,14 +1,23 @@
 // Define an array of products with details including ID, name, price, and image URL
 const products = [
-  { id: 1, name: 'Lipstick', price: 8000.00, image: 'https://via.placeholder.com/200' },
-  { id: 2, name: 'Foundation', price: 15000.00, image: 'https://via.placeholder.com/200' },
-  { id: 3, name: 'Eyeliner', price: 5000.00, image: 'https://via.placeholder.com/200' },
-  { id: 4, name: 'Human Hair Wig', price: 50000.00, image: 'https://via.placeholder.com/200' },
-  { id: 6, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
-  { id: 7, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
-  { id: 8, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
-  { id: 9, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
-  { id: 10, name: 'Mascara', price: 10000.00, image: 'https://via.placeholder.com/200' },
+  { id: 1, name: 'Cerave', price: 8000.00, image: 'images/products/product-1.jpeg' },
+  { id: 2, name: 'DevvaGreen|Moringa Oil', price: 15000.00, image: 'images/products/product-2.jpeg' },
+  { id: 3, name: 'DevvaGreen|Sesame Oil', price: 5000.00, image: 'images/products/product-3.jpeg' },
+  { id: 4, name: 'DevvaGreen|Sea Salt', price: 5000.00, image: 'images/products/product-4.jpeg' },
+  { id: 5, name: 'DevvaGreen|Anti Athrathis', price: 10000.00, image: 'images/products/product-5.jpeg' },
+  { id: 6, name: 'DevvaGreen|Black Seed Oil', price: 10000.00, image: 'images/products/product-6.jpeg' },
+  { id: 7, name: 'Straight Short Bob Wig', price: 50000.00, image: 'images/products/product-7.jpeg' },
+  { id: 8, name: 'Transparent Lace Closure ', price: 80000.00, image: 'images/products/product-8.jpeg' },
+  { id: 9, name:'Transparent Lace Body Wave', price: 100000.00, image: 'images/products/product-9.jpeg' },
+  { id: 10, name: 'Deep Wave Frontal Wig', price: 100000.00, image: 'images/products/product-10.jpeg' },
+  { id: 11, name: 'Human Hair Water Wave', price: 80000.00, image: 'images/products/product-11.jpeg' },
+  { id: 12, name: 'Moroccan Bodywave', price: 70000.00, image: 'images/products/product-12.jpeg' },
+  { id: 13, name: 'Makeup Brush Set', price: 80000.00, image: 'images/products/product-13.jpeg' },
+  { id: 14, name: 'Makeup Kit', price: 10000.00, image: 'images/products/product-14.jpeg' },
+  { id: 15, name: 'Women BriConti Makeup', price: 20000.00, image: 'images/products/product-15.jpeg' },
+  { id: 16, name: 'Press on Nails', price: 15000.00, image: 'images/products/product-16.jpeg' },
+  { id: 17, name: 'Accrylic Nails', price: 20000.00, image: 'images/products/product-17.jpeg' },
+  { id: 18, name: 'Personalized Press on', price: 10000.00, image: 'images/products/product-18.jpeg' },
 ];
 
 // Initialize cart from localStorage or empty array if no data is present
@@ -168,6 +177,42 @@ function payWithPaystack(amount) {
   // Open Paystack payment iframe
   handler.openIframe();
 }
+
+
+
+// Search function
+function searchProducts() {
+  const searchBar = document.getElementById('search-bar');
+  const searchTerm = searchBar.value.toLowerCase();
+
+  const productsContainer = document.getElementById('products');
+  productsContainer.innerHTML = '';
+
+  const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+
+  filteredProducts.forEach(product => {
+    const productCard = `
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="${product.image}" class="card-img-top" alt="${product.name}">
+          <div class="card-body">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">₦${product.price.toFixed(2)}</p>
+            <button class="btn btn-outline-dark" onclick="viewProduct(${product.id})">View Product</button>
+            <button class="btn btn-primary" onclick="addToCart(${product.id})">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `;
+    productsContainer.innerHTML += productCard;
+  });
+
+  if (filteredProducts.length === 0) {
+    productsContainer.innerHTML = '<p>No products found.</p>';
+  }
+}
+
+
 
 // Google maps
 

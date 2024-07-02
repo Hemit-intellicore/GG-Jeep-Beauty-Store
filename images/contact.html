@@ -38,9 +38,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">Shop</a>
                     </li>
@@ -53,62 +50,40 @@
         </div>
     </header>
 
-<!-- About Us Section -->
-
-<main class="container mt-5">
-    <section class="hero bg-light text-center p-5 mb-5">
-      <h2>About Us</h2>
-      <p>Discover more about GG JEEP Beauty Store</p>
-      </section>
-      </main>
-
-<section class="about-us py-5">
+<!-- Contact Us Section -->
+<section class="contact-us py-5">
     <div class="container">
         <div class="row mb-4">
-            
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="images/about-us.jpeg" alt="About Us" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-md-6">
-                <h2>Our Story</h2>
-                <p>GG JEEP Beauty Store was founded with the vision of creating a unique place where beauty enthusiasts can find high-quality products that inspire confidence and enhance natural beauty. Our journey started from a small boutique and has grown into a trusted brand known for exceptional customer service and a curated selection of beauty products.</p>
-                <h2>Our Mission</h2>
-                <p>We aim to provide an extensive range of beauty products that cater to diverse needs and preferences. Our mission is to empower individuals to look and feel their best by offering products that deliver real results and exceptional value.</p>
-            </div>
-        </div>
-        <div class="row mt-5">
             <div class="col text-center">
-                <h2>Our Values</h2>
-                <p>At GG JEEP Beauty Store, we believe in:</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card bg-light mb-3 shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Quality</h5>
-                                <p class="card-text">Providing top-quality products that meet the highest standards.</p>
-                            </div>
-                        </div>
+                <h1 class="display-4 text-primary">Contact Us</h1>
+                <p class="lead text-secondary">We'd love to hear from you! Please fill out the form below or reach us at:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
                     </div>
-                    <div class="col-md-4">
-                        <div class="card bg-light mb-3 shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Innovation</h5>
-                                <p class="card-text">Staying ahead of beauty trends to bring you the latest and greatest.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
                     </div>
-                    <div class="col-md-4">
-                        <div class="card bg-light mb-3 shadow">
-                            <div class="card-body">
-                                <h5 class="card-title">Customer Focus</h5>
-                                <p class="card-text">Putting our customers first in everything we do.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Enter subject">
                     </div>
-                </div>
-                <a href="products.html" class="btn btn-primary mt-3">Shop Now</a>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+                
             </div>
         </div>
     </div>
@@ -205,5 +180,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8S67rwdLsVB1XsDdr_jLH0xNMgqnZW2o&callback=initMap" async defer></script>
+<script src="js/script.js"></script>
 </body>
 </html>

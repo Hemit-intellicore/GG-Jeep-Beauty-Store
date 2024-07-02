@@ -128,12 +128,12 @@ body {
 
 
 
-// homepage css
+/*-------------- Homepage css  ----------------------*/
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #fff;
-  color: #333;
+  color: #d14606;
 }
 
 .bg-pink {
@@ -149,7 +149,7 @@ body {
 }
 
 .navbar .nav-link {
-  color: #fff;
+  color: #d45703;
 }
 
 .navbar .nav-link:hover {
@@ -182,34 +182,8 @@ blockquote {
   border-left: 0.25rem solid #ff69b4;
 }
 
-blockquote-footer {
-  font-size: 0.875rem;
-  color: #6c757d;
-}
 
-footer {
-  background-color: #343a40;
-}
-
-footer a {
-  color: #ff69b4;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer h5 {
-  border-bottom: 1px solid #ff69b4;
-  padding-bottom: 0.5rem;
-}
-
-.list-inline-item a {
-  font-size: 1.5rem;
-}
-
-
+/*-----------Logo----------------------*/
 .navbar-brand img {
   max-height: 60px; /* Adjust maximum height as needed */
   width: auto;
@@ -217,7 +191,7 @@ footer h5 {
   vertical-align: middle;
 }
 
-
+/*-----------------   product page Navbar------------*/
 .navbar {
   position: sticky;
   top: 0;
@@ -269,7 +243,7 @@ footer h5 {
 }
 
 
-// about page
+/*--------about page-------------------*/
 
 body {
   font-family: 'Arial', sans-serif;
@@ -307,12 +281,11 @@ body {
   line-height: 1.6;
 }
 
+
+*/
+/******** FOOTER ***************/
 footer {
   background-color: #343a40;
-}
-
-footer h5 {
-  font-size: 1.25rem;
 }
 
 footer p, footer ul, footer small {
@@ -337,79 +310,22 @@ footer .row + .row {
   margin-top: 15px;
 }
 
-// contact css
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navbar-nav .nav-item .nav-link {
-  font-size: 1.1rem;
-}
-
-.contact-us {
-  background-color: #fff;
-  padding: 60px 0;
-}
-
-.contact-us .display-4 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.contact-us .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
+blockquote-footer {
+  font-size: 0.875rem;
   color: #6c757d;
 }
 
-.contact-us h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-top: 30px;
-}
-
-.contact-us p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-footer {
-  background-color: #343a40;
-}
-
 footer h5 {
+  border-bottom: 1px solid #ff69b4;
+  padding-bottom: 0.5rem;
   font-size: 1.25rem;
 }
 
-footer p, footer ul, footer small {
-  font-size: 0.875rem;
+.list-inline-item a {
+  font-size: 1.5rem;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: none;
-}
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer .container {
-  max-width: 1140px;
-  margin: auto;
-}
-
-footer .row + .row {
-  margin-top: 15px;
-}
 
  /* Ensure map container has height */
  #map {
@@ -422,7 +338,7 @@ footer .row + .row {
   padding: 5em 0;
   background: #f7f7f7;
 }
-
+/*-------------------- Feautures-----------------------*/
 .feature-center {
   padding: 2em;
   background: #fff;
@@ -484,7 +400,7 @@ footer .row + .row {
   font-weight: 900;
 }
 
-// opening Hours
+/*--------------opening Hours -----------------------------*/
 
 .opening-hours .table {
   width: 100%;
@@ -534,3 +450,58 @@ footer .row + .row {
 .list-inline-item a:hover {
   color: #ff69b4;
 }
+
+
+/*---------------------------------------
+                 CONTACT             
+  -----------------------------------------*/
+
+  #contact {
+    background: #000000;
+  }
+
+  #contact h2 {
+    color: #ffffff;
+  }
+
+  #contact .section-title {
+    padding-bottom: 20px;
+  }
+
+  #contact h2 > small,
+  #contact p,
+  #contact a {
+    color: #f9f9f9;
+  }
+
+  #contact-form {
+    padding: 1em 0;
+  }
+
+  #contact-form .col-md-12,
+  #contact-form .col-md-4 {
+    padding-left: 0;
+  }
+
+  #contact-form .form-control {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: none;
+    margin: 10px 0;
+  }
+
+  #contact-form input {
+    height: 50px;
+  }
+
+  #contact-form input[type='submit'] {
+    border-radius: 50px;
+    border: 1px solid transparent;
+  }
+
+  #contact-form input[type='submit']:hover {
+    background: transparent;
+    border-color: #ffffff;
+    color: #d10b47;
+  }
+  
